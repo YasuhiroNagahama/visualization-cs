@@ -1,6 +1,6 @@
-class Node_1<E> {
+export class Node<E> {
   public data: E;
-  public next: Node_1<E> | null;
+  public next: Node<E> | null;
 
   constructor(data: E) {
     this.data = data;

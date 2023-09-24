@@ -1,8 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var node_1_ts_1 = require("../Nodes/node_1.ts");
+var node_1_1 = require("../Nodes/node_1");
 var DataStructure_SinglyLinkedList = /** @class */ (function () {
     function DataStructure_SinglyLinkedList(arr) {
+        this.head = null;
         if (arr.length <= 0) {
             this.head = null;
         }
@@ -11,11 +12,11 @@ var DataStructure_SinglyLinkedList = /** @class */ (function () {
         }
     }
     DataStructure_SinglyLinkedList.prototype.setArrayData = function (arr) {
-        var firstNode = new node_1_ts_1.Node_1(arr[0]);
+        var firstNode = new node_1_1.Node(arr[0]);
         this.head = firstNode;
         var iterator = this.head;
         for (var i = 1; i < arr.length; i++) {
-            var newNode = new node_1_ts_1.Node_1(arr[i]);
+            var newNode = new node_1_1.Node(arr[i]);
             iterator.next = newNode;
             iterator = iterator.next;
         }
@@ -48,7 +49,7 @@ var DataStructure_SinglyLinkedList = /** @class */ (function () {
         return listSize;
     };
     DataStructure_SinglyLinkedList.prototype.pushFront = function (element) {
-        var newNode = new node_1_ts_1.Node_1(element);
+        var newNode = new node_1_1.Node(element);
         if (this.head === null) {
             this.head = newNode;
         }
@@ -58,7 +59,7 @@ var DataStructure_SinglyLinkedList = /** @class */ (function () {
         }
     };
     DataStructure_SinglyLinkedList.prototype.pushBack = function (element) {
-        var newNode = new node_1_ts_1.Node_1(element);
+        var newNode = new node_1_1.Node(element);
         if (this.head === null) {
             this.head = newNode;
         }

@@ -1,7 +1,11 @@
-var Node_1 = /** @class */ (function () {
-    function Node_1(data) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Node = void 0;
+var Node = /** @class */ (function () {
+    function Node(data) {
         this.data = data;
         this.next = null;
     }
-    return Node_1;
+    return Node;
 }());
+exports.Node = Node;

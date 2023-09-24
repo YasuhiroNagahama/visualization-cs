@@ -1,5 +1,7 @@
+import { Node } from "../Nodes/node_1";
+
 class DataStructure_SinglyLinkedList<E> {
-  public head: Node_1<E> | null;
+  public head: Node<E> | null = null;
 
   constructor(arr: E[]) {
     if (arr.length <= 0) {
@@ -10,13 +12,13 @@ class DataStructure_SinglyLinkedList<E> {
   }
 
   public setArrayData(arr: E[]): void {
-    const firstNode = new Node_1<E>(arr[0]);
+    const firstNode = new Node<E>(arr[0]);
     this.head = firstNode;
 
     let iterator = this.head;
 
     for (let i = 1; i < arr.length; i++) {
-      const newNode = new Node_1<E>(arr[i]);
+      const newNode = new Node<E>(arr[i]);
       iterator.next = newNode;
 
       iterator = iterator.next;
@@ -59,7 +61,7 @@ class DataStructure_SinglyLinkedList<E> {
   }
 
   public pushFront(element: E): void {
-    const newNode = new Node_1<E>(element);
+    const newNode = new Node<E>(element);
 
     if (this.head === null) {
       this.head = newNode;
@@ -70,7 +72,7 @@ class DataStructure_SinglyLinkedList<E> {
   }
 
   public pushBack(element: E): void {
-    const newNode = new Node_1<E>(element);
+    const newNode = new Node<E>(element);
 
     if (this.head === null) {
       this.head = newNode;
@@ -129,7 +131,7 @@ class DataStructure_SinglyLinkedList<E> {
     }
 
     let iterator = this.head;
-    let prevNode: Node_1<E> | null = null;
+    let prevNode: Node<E> | null = null;
 
     while (iterator.next !== null) {
       prevNode = iterator;
@@ -148,7 +150,7 @@ class DataStructure_SinglyLinkedList<E> {
   }
 }
 
-const emptyArr: number[] = [];
-const singlyList: DataStructure_SinglyLinkedList<number> =
-  new DataStructure_SinglyLinkedList(emptyArr);
-singlyList.print();
+const arr: number[] = [];
+const singlyLinkedList: DataStructure_SinglyLinkedList<number> =
+  new DataStructure_SinglyLinkedList(arr);
+singlyLinkedList.print();
